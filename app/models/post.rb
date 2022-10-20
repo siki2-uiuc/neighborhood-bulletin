@@ -20,4 +20,14 @@ class Post < ApplicationRecord
 
     return user
   end
+
+  def comments
+    my_post_id = self.id
+
+    matching_comments = Comment.where({ :post_id => my_post_id})
+
+    return matching_comments
+  end
+
+  
 end

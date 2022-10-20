@@ -10,4 +10,12 @@
 #  post_id    :integer
 #
 class Comment < ApplicationRecord
+
+  def commenter
+    post_author_id = self.author_id
+
+    matching_users = User.where({ :id => post_author_id})
+    user = matching_users.first
+    return user
+  end
 end
