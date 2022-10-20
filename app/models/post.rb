@@ -12,4 +12,12 @@
 class Post < ApplicationRecord
   validates(:body, { :presence => true})
   validates(:title, { :presence => true})
+
+  def user
+    my_author_id = self.author_id
+
+    user = User.where({:id => my_author_id}).first
+
+    return user
+  end
 end

@@ -9,9 +9,9 @@
   <% @list_of_posts.each do |post| %>
     <tr>
       <td><%= post.title %></td>
-      <td><%= post.author_id %></td>
+      <td><%= post.user.username%></td>
       <td>
-        <a href="/">Show Details</a>
+        <a href="/posts/:id">Show Details</a>
       </td>
     </tr>
   <% end  %>
