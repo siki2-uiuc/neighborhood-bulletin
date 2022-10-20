@@ -1,3 +1,18 @@
 <h1>Neighborhood Bulletin</h1>
 
-
+<table border="1">
+  <tr>
+    <th>Post</th>
+    <th>Creator</th>
+    <th></th>
+  </tr>
+  <% @list_of_posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.author_id %></td>
+      <td>
+        <a href="/">Show Details</a>
+      </td>
+    </tr>
+  <% end  %>
+</table>
