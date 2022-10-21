@@ -30,7 +30,7 @@
 
 <h2>Comments Section</h2>
 
-<table border="1">
+<table>
   <tr>
     <th>Commenter</th>
     <th>Comment</th>
@@ -43,7 +43,9 @@
     <td><%= comment.commenter.username %></td>
     <td><%= comment.body %></td>
     <td><%= comment.created_at %></td>
-    <td><a href="/delete_comment/<%= comment.id %>">Delete</a></td>
+    <td>
+    <a href="/delete_comment/<%= comment.id %>">Delete</a>
+    </td>
   </tr>
   <% end%>
 </table>
