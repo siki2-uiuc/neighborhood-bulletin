@@ -17,4 +17,29 @@ class PostsController < ApplicationController
 
     render({ :template => "post_templates/show.html.erb"})
   end
+
+  def new_post
+
+    render( :template => "post_templates/create_post.html.erb")
+  end
+
+  def create
+    input_title = params.fetch("query_title")
+    input_body = params.fetch("query_body")
+    input_author = params.fetch("query_author")
+
+    author = User.where({ :username => input_author}).first
+    author_id = author.id
+
+    new_post = Post.new
+    new_post.title = input_title
+    new_post.body = input_body
+    new_post.author_id = author_id
+
+    new_post.save
+
+    redirect_to("/posts")
+  end
+
+
 end

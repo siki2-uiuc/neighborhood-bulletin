@@ -1,5 +1,7 @@
 <h1>Neighborhood Bulletin</h1>
 
+<a href="/new_post">Create new post</a>
+
 <table border="1">
   <tr>
     <th>Post</th>
@@ -11,7 +13,7 @@
       <td><%= post.title %></td>
       <td><%= post.user.username%></td>
       <td>
-        <a href="/posts/:id">Show Details</a>
+        <a href="/posts/<%= post.id%>">Show Details</a>
       </td>
     </tr>
   <% end  %>
