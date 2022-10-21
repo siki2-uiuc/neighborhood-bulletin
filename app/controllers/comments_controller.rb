@@ -17,4 +17,15 @@ class CommentsController < ApplicationController
 
     redirect_to("/posts/#{new_comment.post_id}")
   end
+
+  def delete
+    id_to_delete = params.fetch("id")
+
+    comment_to_delete = Comment.where({ :id => id_to_delete}).first
+    deleted_comment_post_id = comment_to_delete.post_id
+
+    comment_to_delete.destroy
+
+    redirect_to("/posts/#{deleted_comment_post_id}")
+  end
 end

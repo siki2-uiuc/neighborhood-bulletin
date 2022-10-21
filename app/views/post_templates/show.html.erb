@@ -35,6 +35,7 @@
     <th>Commenter</th>
     <th>Comment</th>
     <th>Date Posted</th>
+    <th>Delete Comment</th>
   </tr>
 
   <% @the_post.comments.each do |comment|  %>
@@ -42,6 +43,7 @@
     <td><%= comment.commenter.username %></td>
     <td><%= comment.body %></td>
     <td><%= comment.created_at %></td>
+    <td><a href="/delete_comment/<%= comment.id %>">Delete</a></td>
   </tr>
   <% end%>
 </table>
