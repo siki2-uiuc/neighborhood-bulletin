@@ -1,0 +1,14 @@
+<h1>Edit post</h1>
+
+<form action="/update_post/<%= @post_before_edit.id%>">
+  <label for="title">Post title</label>
+  <input id="title" type="text" name="query_title" value="<%= @post_before_edit.title%>">
+
+  <label for="body">Post body</label>
+  <textarea name="query_body" id="body" cols="30" rows="10"><%= @post_before_edit.body %></textarea>
+
+  <label for="post_creator">Who's Posting?</label>
+  <input id="post_creator" type="text" name="query_author" value="<%= @post_before_edit.author_id%>">
+
+  <button>Submit post</button>
+</form>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get("/create_post", { :controller => "posts", :action => "create"})
   get("/posts/:id", { :controller => "posts", :action => "details"})
   get("/delete_post/:id", { :controller => "posts", :action => "delete"})
-  
+  get("/edit_post/:id", { :controller => "posts", :action => "edit_form"})
+  get("update_post/:id", { :controller => "posts", :action => "update"})
 
 end

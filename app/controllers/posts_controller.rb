@@ -51,5 +51,32 @@ class PostsController < ApplicationController
     redirect_to("/posts")
   end
 
+  def edit_form
+    edit_id = params.fetch("id")
+
+    @post_before_edit = Post.where({ :id => edit_id}).first
+
+    render({ :template => "post_templates/edit_post_form.html.erb"})
+  end
+
+  def update
+    input_id = params.fetch("id")
+    updated_title = params.fetch("query_title")
+    updated_body = params.fetch("query_body")
+    input_author = params.fetch("query_author")
+
+    updated_author = User.where( :username => input_author).first
+    updated_author_id = updated_author.id
+    
+    post_to_update = Post.where({ :id => input_id}).first
+    post_to_update.title = updated_title
+    post_to_update.body = updated_body
+    post_to_update.author_id = updated_author_id
+
+    post_to_update.save
+
+
+    redirect_to("/posts/#{post_to_update.id}")
+  end
 
 end
