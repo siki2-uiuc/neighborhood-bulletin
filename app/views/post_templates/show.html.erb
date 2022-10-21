@@ -47,4 +47,15 @@
 </table>
 
 <h3>Add comment</h3>
-<form action="/add_comment"></form>
+<form action="/add_comment">
+  <label for="post_id">Post ID</label>
+  <input id="post_id" type="text" name="query_post_id" value="<%= @the_post.id %>">
+
+  <label for="author_name">Comment Author</label>
+  <input id="author_name" type="text" name="query_author_name">
+
+  <label for="comment">Comment</label>
+  <textarea name="query_comment" id="comment" placeholder="Enter a comment..." ></textarea>
+
+  <button>Add comment</button>
+</form>
