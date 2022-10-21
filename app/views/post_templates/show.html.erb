@@ -17,9 +17,16 @@
   </dd>
 </dl>
 
-<form action="/edit_post/<%= @the_post.id%>">
-  <button>Edit post</button>
-</form>
+<div style="display: flex;">
+  <form action="/edit_post/<%= @the_post.id%>">
+    <button>Edit post</button>
+  </form>
+  
+  <form action="/delete_post/<%= @the_post.id%>">
+    <button>Delete this post</button>
+  </form>
+</div>
+
 
 <h2>Comments Section</h2>
 
@@ -39,6 +46,5 @@
   <% end%>
 </table>
 
-<form action="/delete_post/<%= @the_post.id%>">
-  <button>Delete this post</button>
-</form>
+<h3>Add comment</h3>
+<form action="/add_comment"></form>

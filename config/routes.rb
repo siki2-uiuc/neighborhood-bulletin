@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get("/edit_post/:id", { :controller => "posts", :action => "edit_form"})
   get("update_post/:id", { :controller => "posts", :action => "update"})
 
+  get("/add_comment", { :controller => "comments", :action => "add_comment"})
+
 end

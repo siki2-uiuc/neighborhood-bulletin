@@ -8,7 +8,7 @@
   <textarea name="query_body" id="body" cols="30" rows="10"><%= @post_before_edit.body %></textarea>
 
   <label for="post_creator">Who's Posting?</label>
-  <input id="post_creator" type="text" name="query_author" value="<%= @post_before_edit.author_id%>">
+  <input id="post_creator" type="text" name="query_author" value="<%= @post_before_edit.user.username %>">
 
   <button>Submit post</button>
 </form>
