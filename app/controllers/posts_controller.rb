@@ -41,5 +41,15 @@ class PostsController < ApplicationController
     redirect_to("/posts")
   end
 
+  def delete
+    post_to_delete_id = params.fetch("id")
+
+    post_to_delete = Post.where({ :id => post_to_delete_id }).first
+
+    post_to_delete.destroy
+
+    redirect_to("/posts")
+  end
+
 
 end
